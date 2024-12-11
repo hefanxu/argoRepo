@@ -29,6 +29,13 @@ spec:
                   period: 24h
           storage:
             type: 'filesystem'
+        # Zero out replica counts of Single Scale deployment mode
+        backend:
+          replicas: 0
+        read:
+          replicas: 0
+        write:
+          replicas: 0
   destination:
     server: https://kubernetes.default.svc
     namespace: grafana
