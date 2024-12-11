@@ -13,7 +13,7 @@ spec:
     targetRevision: ^6.23.0
     helm:
       valueFiles:
-        - app/loki/values.yaml
+        - ../loki/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: grafana
