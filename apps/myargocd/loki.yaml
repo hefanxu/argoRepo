@@ -27,15 +27,10 @@ spec:
                 index:
                   prefix: index_
                   period: 24h
+          storage:
+            type: 'filesystem'
         singleBinary:
           replicas: 1
-        # Zero out replica counts of Single Scale deployment mode
-        backend:
-          replicas: 0
-        read:
-          replicas: 0
-        write:
-          replicas: 0
   destination:
     server: https://kubernetes.default.svc
     namespace: grafana
