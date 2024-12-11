@@ -29,8 +29,6 @@ spec:
                   period: 24h
           storage:
             type: 'filesystem'
-        singleBinary:
-          replicas: 1
   destination:
     server: https://kubernetes.default.svc
     namespace: grafana
