@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myargocd
+  name: postgres
   namespace: myargocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -13,7 +13,7 @@ spec:
     path: apps/argocd
   destination:
     server: https://kubernetes.default.svc
-    namespace: postgres
+    namespace: myargocd
   syncPolicy:
     automated:
       selfHeal: true
