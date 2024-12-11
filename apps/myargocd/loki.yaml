@@ -12,8 +12,15 @@ spec:
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: ^6.23.0
     helm:
-      valueFiles:
-        - ../loki/values.yaml
+      values: |
+        loki:
+          auth_enabled: false
+          commonConfig:
+            replication_factor: 1
+          storage:
+            type: 'filesystem'
+        singleBinary:
+          replicas: 1
   destination:
     server: https://kubernetes.default.svc
     namespace: grafana
